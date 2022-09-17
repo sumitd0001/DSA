@@ -31,6 +31,7 @@ class SinglyLinkedList {
     private:
         void insertInternal(const T& val, const int& pos);
         void deleteInternal(const int& pos);
+        Node<T>* reverse(Node<T>* node);
 
     private :
         Node<T>* _head;
@@ -192,8 +193,12 @@ void SinglyLinkedList<T>::print() {
 }
 
 template<typename T>
-void SinglyLinkedList<T>::reverse() {
+Node<T>* SinglyLinkedList<T>::reverse(Node<T>* node) {
 
+}
+
+template<typename T>
+void SinglyLinkedList<T>::reverse() {
 }
 
 int main () {
@@ -201,19 +206,19 @@ int main () {
     SinglyLinkedList<int>* list = new SinglyLinkedList<int>();
     while (true) {
         cout<<"Which operation you want to perform : \n";
-        cout<<"1. push at the front\n";
-        cout<<"2. push at the back\n";
-        cout<<"3. insert in the middle\n";
-        cout<<"4. insert at a position\n";
-        cout<<"5. pop from the front\n";
-        cout<<"6. pop from the end\n";
-        cout<<"7. delete from the middle\n";
-        cout<<"8. delete from a position\n";
-        cout<<"9. Print front\n";
-        cout<<"10. Print back\n";
-        cout<<"11. Print Linked List\n";
-        cout<<"12. Reverse the linked list\n";
-        cout<<"13. Quit\n";
+        cout<<"1. push at the front : ";
+        cout<<"2. push at the back : ";
+        cout<<"3. insert in the middle : ";
+        cout<<"4. insert at a position : ";
+        cout<<"5. pop from the front : ";
+        cout<<"6. pop from the end : ";
+        cout<<"7. delete from the middle : ";
+        cout<<"8. delete from a position : ";
+        cout<<"9. Print front : ";
+        cout<<"10. Print back : ";
+        cout<<"11. Print Linked List : ";
+        cout<<"12. Reverse the linked list : ";
+        cout<<"13. Quit : ";
 
         cin>>option;
 
@@ -242,7 +247,16 @@ int main () {
             case 8 :    list->pop_pos();
                         cout<<"Done\n";
                         break;
+            case 9 :    list->front();
+                        cout<<"Done\n";
+                        break;
+            case 10 :    list->back();
+                        cout<<"Done\n";
+                        break;
             case 11 :   list->print();
+                        cout<<"Done\n";
+                        break;
+            case 12 :   list->reverse();
                         cout<<"Done\n";
                         break;
             case 13 :   return 0;
