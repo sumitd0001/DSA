@@ -104,8 +104,10 @@ int main () {
 
     vector<int> ts = two_number_sum(vec, TargetSum);
     cout<<"Target Sum : "<<TargetSum<<"\n";
+
     for(auto x : ts) {
         cout<<x<<" ";
     }
+    
     return 0;
 }
