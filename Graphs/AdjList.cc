@@ -10,7 +10,7 @@
 #include "detect_cycle_DAG_BFS_Kahns_Algo.cc"
 #include "shortest_path_DAG_weighted_topological_sort.cc"
 #include "shortest_path_undirected_weighted_DIJKASTRAS_ALGO.cc"
-#include "minimum_spanning_tree_PRIMS_ALGO.cc"
+#include "minimum_spanning_tree_undirected_weighted_PRIMS_ALGO.cc"
 using namespace std;
 
 template <typename T>
@@ -85,6 +85,13 @@ int main () {
     isCycle = detect_cycle_directed_graph_DFS(adj_directed);
     cout<<"Cycle Exists Directed Graph DFS : "<<isCycle<<"\n";
 
+    unordered_map<int, unordered_set<int>> adj_directed_2;
+    addEdge_Directed_Graph(adj_directed_2, 3, 2);
+    addEdge_Directed_Graph(adj_directed_2, 2, 1);
+    addEdge_Directed_Graph(adj_directed_2, 1, 0);
+    isCycle = detect_cycle_directed_graph_DFS(adj_directed_2);
+    cout<<"Cycle Exists Directed Graph (adj_directed_2) DFS : "<<isCycle<<"\n";
+
 
     unordered_map<int, unordered_set<int>> adj_directed_cycle;
     addEdge_Directed_Graph(adj_directed_cycle, 1, 2);
@@ -106,7 +113,7 @@ int main () {
     addEdge_directed_weighted(adj_directed_weighted, 5, 6, 4);
     addEdge_directed_weighted(adj_directed_weighted, 3, 4, 6);
     addEdge_directed_weighted(adj_directed_weighted, 6, 4, 1);
-    
+
     cout<<"Shortest Path in a DAG weighted : \n";
     for (auto node : adj_directed_weighted) {
         shortest_path_DAG_weighted(adj_directed_weighted, node.first); 
